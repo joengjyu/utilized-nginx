@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: utilized-nginx-dep
+  labels:
+    app: utilized-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: utilized-nginx
+  template:
+    metadata:
+      labels:
+        app: utilized-nginx
+    spec:
+      containers:
+      - name: utilized-nginx
+        image: yangyyu/nginx:latest
+        ports:
+        - containerPort: 80
+
