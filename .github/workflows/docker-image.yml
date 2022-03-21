@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@master
     # 构建镜像
     - name: Build the Docker image
-      run: docker build -t nginx:latest .
+      run: docker build -t yangyyu/nginx:latest .
     # 登陆dockerhub
     - name: Login to DockerHub
       uses: docker/login-action@v1
@@ -27,4 +27,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     # 推送镜像
     - name: Push the Docker image
-      run: docker push nginx:latest
+      run: docker push yangyyu/nginx:latest
